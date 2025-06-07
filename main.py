@@ -1,5 +1,5 @@
 import psycopg2
-from utils.db_maintenence import create_tables, drop_all_tables
+from utils.db_setup import create_tables, drop_all_tables
 
 
 DB_NAME = "meetDB"

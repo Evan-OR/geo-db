@@ -5,7 +5,7 @@ TEST_USERS = [
     {
         "email": "evan@example.com",
         "name": "Evan",
-        "password_hash": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef",
+        "password_hash": "$2b$10$NSoIeNiNKwCM2Wqe9YIWAuCOmtYhruVrXxpRo3D.amp9aTvQ33gwa",  # plaintext password = 123
         "date_of_birth": date(2000, 10, 18),
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ultrices semper urna, nec interdum ante laoreet eget.",
         "job": "Software Engineer",
@@ -15,7 +15,7 @@ TEST_USERS = [
     {
         "email": "kev@example.com",
         "name": "Kevin",
-        "password_hash": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef",
+        "password_hash": "$2b$10$NSoIeNiNKwCM2Wqe9YIWAuCOmtYhruVrXxpRo3D.amp9aTvQ33gwa",  # plaintext password = 123
         "date_of_birth": date(2001, 12, 20),
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ultrices semper urna, nec interdum ante laoreet eget.",
         "job": "Founder",

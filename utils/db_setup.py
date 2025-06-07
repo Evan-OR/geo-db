@@ -16,13 +16,13 @@ CREATE TABLE IF NOT EXISTS users (
 """
 
 CREATE_GENDER_TABLE = """
-CREATE TABLE gender (
+CREATE TABLE genders (
   id SERIAL PRIMARY KEY,
   label VARCHAR(50) UNIQUE NOT NULL
 );
 """
 POPULATE_GENDER_TABLE = """
-INSERT INTO gender (label) VALUES
+INSERT INTO genders (label) VALUES
 ('Male'),
 ('Female'),
 ('Non-binary'),
