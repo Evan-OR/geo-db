@@ -4,12 +4,13 @@ CREATE_USER_TABLE = """
 CREATE TABLE IF NOT EXISTS users (
   id SERIAL PRIMARY KEY,
   email VARCHAR(255) UNIQUE NOT NULL,
-  name VARCHAR(100),
+  first_name VARCHAR(100),
+  last_name VARCHAR(100),
   password_hash TEXT NOT NULL,
   date_of_birth DATE,
   description TEXT,
   job VARCHAR(100),
-  gender_id INTEGER REFERENCES gender(id),
+  gender_id INTEGER REFERENCES genders(id),
   created_at TIMESTAMPTZ DEFAULT NOW(),
   updated_at TIMESTAMPTZ DEFAULT NOW()
 );

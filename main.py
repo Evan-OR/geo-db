@@ -18,7 +18,8 @@ def connect():
 if __name__ == "__main__":
     conn = connect()
 
+    drop_all_tables(conn)
     create_tables(conn)
 
     conn.close()
-    print("Finished!")
+    print("DB Created!")
