@@ -4,13 +4,15 @@ CREATE_USER_TABLE = """
 CREATE TABLE IF NOT EXISTS users (
   id SERIAL PRIMARY KEY,
   email VARCHAR(255) UNIQUE NOT NULL,
-  first_name VARCHAR(100),
-  last_name VARCHAR(100),
+  display_name VARCHAR(100),
+  first_name VARCHAR(100) NOT NULL,
+  last_name VARCHAR(100) NOT NULL,
   password_hash TEXT NOT NULL,
   date_of_birth DATE,
   description TEXT,
   job VARCHAR(100),
   gender_id INTEGER REFERENCES genders(id),
+  interested_in_gender_id INTEGER REFERENCES genders(id),
   created_at TIMESTAMPTZ DEFAULT NOW(),
   updated_at TIMESTAMPTZ DEFAULT NOW()
 );
@@ -22,12 +24,14 @@ CREATE TABLE genders (
   label VARCHAR(50) UNIQUE NOT NULL
 );
 """
+# 'All' in gender list is just for specifying [interested_in_gender_id] column in user table
 POPULATE_GENDER_TABLE = """
 INSERT INTO genders (label) VALUES
 ('Male'),
 ('Female'),
 ('Non-binary'),
-('Other')
+('Other'),
+('All')
 ON CONFLICT (label) DO NOTHING;
 """
 
